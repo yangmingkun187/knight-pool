@@ -2,7 +2,7 @@ import Vue from 'vue'
 import './plugins/axios'
 import App from './App.vue'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 import router from './router'
 import NProgress from 'nprogress' // Progress 进度条
@@ -15,7 +15,7 @@ import Polyfill from 'utils/legacy/index'
 import './plugins/element.js'
 
 //Polyfill
-Polyfill.walk()
+Polyfill.walk();
 
 // 注册全局 filter
 Object.keys(filters).forEach(key => {
@@ -25,17 +25,17 @@ Object.keys(filters).forEach(key => {
 // 注册全局指令
 Object.keys(directives).forEach(key => {
 	Vue.directive(key, directives[key])
-})
+});
 
 // 全局组件注册
 Object.keys(components).forEach((key) => {
 	Vue.component(key, components[key])
-})
+});
 
 /**
  * 路由过场动画--start
  */
-Vue.cancel = []
+Vue.cancel = [];
 // eslint-disable-next-line no-unused-vars
 router.beforeEach((to, from, next) => {
 	NProgress.start(); // 开启Progress
@@ -60,6 +60,4 @@ new Vue({
 	router,
 	store,
 	render: h => h(App)
-}).$mount('#app')
-
-
+}).$mount('#app');
