@@ -3,10 +3,6 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-new Vue({
-	render: h => h(App),
-}).$mount('#app')
-
 import router from './router';
 import NProgress from 'nprogress'; // Progress 进度条
 import 'nprogress/nprogress.css';// Progress 进度条 样式
@@ -46,9 +42,9 @@ router.beforeEach((to, from, next) => {
 		Vue.cancel.pop()('cancel');
 	}
 	try {
-		NProgress.done(); // 在hash模式下 改变手动改变hash 重定向回来 不会触发afterEach 暂时hack方案 ps：history模式下无问题，可删除该行！
+		NProgress.done();
 	} catch (err) {
-		NProgress.done(); // 在hash模式下 改变手动改变hash 重定向回来 不会触发afterEach 暂时hack方案 ps：history模式下无问题，可删除该行！
+		NProgress.done();
 	}
 });
 

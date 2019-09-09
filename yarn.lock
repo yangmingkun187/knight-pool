@@ -681,9 +681,9 @@
   integrity sha1-CnCVreoGckPOMoPhtWuKj0U7JCo=
 
 "@hapi/hoek@8.x.x":
-  version "8.2.2"
-  resolved "https://registry.npm.taobao.org/@hapi/hoek/download/@hapi/hoek-8.2.2.tgz#6eaa2e1ec3b50dfb8dccbe705dc289094652bc2d"
-  integrity sha1-bqouHsO1DfuNzL5wXcKJCUZSvC0=
+  version "8.2.3"
+  resolved "https://registry.npm.taobao.org/@hapi/hoek/download/@hapi/hoek-8.2.3.tgz#7ffcb10d9609be5eeb96521b62941653da264b28"
+  integrity sha1-f/yxDZYJvl7rllIbYpQWU9omSyg=
 
 "@hapi/joi@^15.0.1":
   version "15.1.1"
@@ -974,9 +974,9 @@
     string.prototype.padstart "^3.0.0"
 
 "@vue/cli-shared-utils@^4.0.0-alpha.4":
-  version "4.0.0-rc.1"
-  resolved "https://registry.npm.taobao.org/@vue/cli-shared-utils/download/@vue/cli-shared-utils-4.0.0-rc.1.tgz#77c3f001a058e87d0d9c71ad0c6f72b3fce47ab5"
-  integrity sha1-d8PwAaBY6H0NnHGtDG9ys/zkerU=
+  version "4.0.0-rc.2"
+  resolved "https://registry.npm.taobao.org/@vue/cli-shared-utils/download/@vue/cli-shared-utils-4.0.0-rc.2.tgz#0380b15725c5a032bff10c3ba06e0c44741a10f6"
+  integrity sha1-A4CxVyXFoDK/8Qw7oG4MRHQaEPY=
   dependencies:
     "@hapi/joi" "^15.0.1"
     chalk "^2.4.1"
@@ -3001,10 +3001,26 @@ error-stack-parser@^2.0.0:
   dependencies:
     stackframe "^1.0.4"
 
-es-abstract@^1.12.0, es-abstract@^1.4.3, es-abstract@^1.5.1:
+es-abstract@^1.12.0, es-abstract@^1.5.1:
   version "1.14.1"
   resolved "https://registry.npm.taobao.org/es-abstract/download/es-abstract-1.14.1.tgz#6e8d84b445ec9c610781e74a6d52cc31aac5b4ca"
   integrity sha1-bo2EtEXsnGEHgedKbVLMMarFtMo=
+  dependencies:
+    es-to-primitive "^1.2.0"
+    function-bind "^1.1.1"
+    has "^1.0.3"
+    has-symbols "^1.0.0"
+    is-callable "^1.1.4"
+    is-regex "^1.0.4"
+    object-inspect "^1.6.0"
+    object-keys "^1.1.1"
+    string.prototype.trimleft "^2.0.0"
+    string.prototype.trimright "^2.0.0"
+
+es-abstract@^1.4.3:
+  version "1.14.2"
+  resolved "https://registry.npm.taobao.org/es-abstract/download/es-abstract-1.14.2.tgz?cache=0&sync_timestamp=1567985250415&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fes-abstract%2Fdownload%2Fes-abstract-1.14.2.tgz#7ce108fad83068c8783c3cdf62e504e084d8c497"
+  integrity sha1-fOEI+tgwaMh4PDzfYuUE4ITYxJc=
   dependencies:
     es-to-primitive "^1.2.0"
     function-bind "^1.1.1"
@@ -4700,7 +4716,7 @@ json-schema-traverse@^0.4.1:
 
 json-schema@0.2.3:
   version "0.2.3"
-  resolved "https://registry.npm.taobao.org/json-schema/download/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
+  resolved "https://registry.npm.taobao.org/json-schema/download/json-schema-0.2.3.tgz?cache=0&sync_timestamp=1567740732347&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjson-schema%2Fdownload%2Fjson-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
   integrity sha1-tIDIkuWaLwWVTOcnvT8qTogvnhM=
 
 json-stable-stringify-without-jsonify@^1.0.1:
