@@ -1,0 +1,27 @@
+@import './mixin';
+$tipsyBg : rgba(#000, .9) !default;
+$border-size : 6px !default;
+//tipsy
+.abc-tipsy {
+  vertical-align: middle;
+  display: inline-block;
+}
+.abc-tipsy--nw { @include tipsy(nw, $tipsyBg, $border-size, 0);  } //上左
+.abc-tipsy--n  { @include tipsy(n, $tipsyBg, $border-size, 3px); } //上中(上)
+.abc-tipsy--ne { @include tipsy(ne, $tipsyBg, $border-size, 0);  } //上右
+.abc-tipsy--e  { @include tipsy(e, $tipsyBg, 0, 3px); } //右
+.abc-tipsy--se { @include tipsy(se, $tipsyBg, $border-size, 0);  } //下右
+.abc-tipsy--s  { @include tipsy(s, $tipsyBg, $border-size, 3px); } //下中(下)
+.abc-tipsy--sw { @include tipsy(sw, $tipsyBg, $border-size, 0);  } //下左
+.abc-tipsy--w  { @include tipsy(w, $tipsyBg, 8px, 3px); } //左
+.abc-tipsy--multiple {
+  &:after{
+    display: inline-block;
+    width:200%;
+    max-width: 400px;
+    white-space: normal;
+  }
+}
+.tipsy-group.abc-tipsy--n:before, .tipsy-group.abc-tipsy--n:after {
+  left: 35%;
+}
