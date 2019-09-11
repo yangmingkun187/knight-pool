@@ -1,24 +1,24 @@
 <template>
-  <div class="home">
     <el-container>
       <!-- 页头 -->
-      <el-header>
+      <el-header height="50px">
         <Header />
       </el-header>
+
       <el-main>
         <router-view />
       </el-main>
+
+      <!-- 页脚 -->
+      <el-footer>
+        <Footer />
+      </el-footer>
     </el-container>
-    <!-- 页脚 -->
-    <el-footer>
-      <Footer />
-    </el-footer>
-  </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Header from '@/views/layout/Header'
+import Header from '@/views/layout/header/header'
 import Footer from '@/views/layout/Footer'
 
 export default {

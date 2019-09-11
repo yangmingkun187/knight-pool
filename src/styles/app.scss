@@ -1,5 +1,7 @@
 @import 'reset';
-@import 'base';
+@import 'theme';
+
+@import "../views/index";
 
 * {
   margin: 0;
@@ -7,4 +9,12 @@
   border: 0;
   font-size: 100%;
   color: $color_info;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-color: $bg;
 }

@@ -1,17 +1,20 @@
 import Vue from 'vue'
-import './plugins/axios'
 import App from './App.vue'
 
 Vue.config.productionTip = false;
 
 import router from './router'
-import 'nprogress/nprogress.css'// Progress 进度条 样式
 import store from './store'
 import * as filters from './filters' // 全局vue filter
 import * as directives from './directive' // 全局vue directives
 import components from './components/'
 import Polyfill from './utils/legacy/index'
+
+import 'nprogress/nprogress.css'// Progress 进度条 样式
+import './styles/app.scss'
+
 import './plugins/element.js'
+import './plugins/axios'
 
 //Polyfill
 Polyfill.walk();
