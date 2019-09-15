@@ -1,7 +1,7 @@
 <template>
     <el-container>
       <!-- 页头 -->
-      <el-header height="50px">
+      <el-header height="100px">
         <Header />
       </el-header>
 

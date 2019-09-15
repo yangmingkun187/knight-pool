@@ -6,11 +6,12 @@ export default class Polyfill {
     ];
     static walk = () => {
         Polyfill.config.forEach((fn) => {
-            if(fn instanceof Function) {
+            if (fn instanceof Function) {
                 fn && fn()
             } else {
-                console.warn('Polyfill Must Be A Function')
+                // eslint-disable-next-line no-console
+                console.warn('Polyfill Must Be A Function');
             }
         })
-    }
+    };
 }

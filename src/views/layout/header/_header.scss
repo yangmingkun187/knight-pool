@@ -1,12 +1,33 @@
 .app-header {
     width: 1200px;
-    height: 50px;
+    height: 100px;
     background-color: #fff;
+    margin: 0 auto;
+
+    .el-menu.el-menu--horizontal {
+        border-bottom: none;
+    }
     .header-menu {
-        width: 200px;
+    }
+    .el-menu--horizontal>.el-menu-item {
+        height: 100px;
+        line-height: 100px;
     }
 
+    .change-kind {
+        width: 88px;
+        margin-right: 10px;
+    }
     .search-input {
         width: 180px;
+    }
+    .el-icon-message-solid {
+        vertical-align: middle;
+        font-size: 24px;
+    }
+    .change-account {
+        margin-left: 16px;
+        width: 88px;
+        font-size: 18px;
     }
 }
