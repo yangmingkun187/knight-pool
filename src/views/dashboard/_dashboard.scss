@@ -1,14 +1,46 @@
+
+
 .dashboard {
-    // Vars
+    .computing-power {
+        .el-card__body {
+            padding: 0 0 30px 0;
+        }
+        .title {
+            height:44px;
+            line-height: 44px;
+            font-size: 16px;
+            background:rgba(245,247,250,1);
+            padding-left: 20px;
+        }
+        .content {
+            display: flex;
+            > div {
+                flex: 1;
+                padding: 20px;
+                h5 {
+                    height:14px;
+                    font-size:14px;
+                    font-weight:400;
+                    color: $T2;
+                    line-height:22px;
+                    margin-bottom: 16px;
+                }
+                p {
+                    color: $T1;
+                    font-size: 24px;
+                }
+                span {
+                    font-size:14px;
+                    font-weight:400;
+                    color:$T2;
+                    line-height:22px;
+                }
+            }
+        }
 
-    // Support
-
-    // Module
-    & {
-        //
+        .el-progress {
+            padding-left: 20px;
+            width: 80%;
+        }
     }
-
-    // Facets
-
-    // States
 }

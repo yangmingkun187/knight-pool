@@ -1,7 +1,7 @@
 <template>
     <div class="app-header">
 
-        <el-row :gutter="10" type="flex" align="middle">
+        <el-row type="flex" align="middle">
 
             <el-col :xs="4" :sm="6" :md="6" :lg="6" :xl="6">
 
