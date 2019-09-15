@@ -43,4 +43,39 @@
             width: 80%;
         }
     }
+
+    .btc-group {
+        margin-top: 16px;
+        .box-card {
+            height: 134px;
+
+            h3 {
+
+                font-size:18px;
+                font-weight:400;
+                color:$T1;
+                i {
+                    font-size: 20px;
+                    color: $T2;
+                    float: right;
+                }
+            }
+
+            p {
+                margin-top: 28px;
+                font-size:24px;
+                font-weight:400;
+                color: $T1;
+                word-break: break-all;
+                line-height:22px;
+                &.blue {
+                    color: $theme2;
+                }
+                > span {
+                    font-size:14px;
+                    color: $T2;
+                }
+            }
+        }
+    }
 }

@@ -1,7 +1,7 @@
 <template>
     <div class="dashboard">
 
-        <el-row :gutter="20" class="computing-power">
+        <el-row :gutter="16" class="computing-power">
             <el-col :span="16">
 
                 <el-card class="box-card">
@@ -62,12 +62,68 @@
             </el-col>
         </el-row>
 
+        <el-row :gutter="16" class="btc-group">
+            <el-col :span="6">
+
+                <el-card class="box-card">
+                    <h3>
+                        今日已挖
+                        <i class="el-icon-warning-outline"></i>
+                    </h3>
+                    <p class="blue">
+                        0.00054120 <span>BTC</span>
+                    </p>
+                </el-card>
+
+            </el-col>
+
+            <el-col :span="6">
+
+                <el-card class="box-card">
+                    <h3>
+                        总收益
+                        <i class="el-icon-warning-outline"></i>
+                    </h3>
+                    <p>
+                        1.24566 <span>BTC</span>
+                    </p>
+                </el-card>
+
+            </el-col>
+            <el-col :span="6">
+
+                <el-card class="box-card">
+                    <h3>
+                        已支付
+                        <i class="el-icon-warning-outline"></i>
+                    </h3>
+                    <p>
+                        1.24566 <span>BTC</span>
+                    </p>
+                </el-card>
+
+            </el-col>
+            <el-col :span="6">
+
+                <el-card class="box-card">
+                    <h3>
+                        余额
+                        <i class="el-icon-warning-outline"></i>
+                    </h3>
+                    <p>
+                        12332432.736489292921 <span>BTC</span>
+                    </p>
+                </el-card>
+
+            </el-col>
+
+        </el-row>
+
     </div>
 </template>
 
 <script>
-    export default {
-        props: {
-        },
-    };
+	export default {
+		props: {},
+	};
 </script>
