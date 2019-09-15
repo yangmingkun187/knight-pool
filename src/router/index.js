@@ -6,22 +6,21 @@ import children from './homeChildren'
 Vue.use(Router);
 
 const router = new Router({
-	mode: 'hash',
-	scrollBehavior : () => ({ y : 0 }),
+	scrollBehavior: () => ({y: 0}),
 	base: process.env.BASE_URL,
 	routes: [
-		{path: '/', redirect: '/home'},
+		{
+			path: '/',
+			redirect: '/dashboard',
+			component: () => import('@/views/Home.vue'),
+			children
+		},
+
 		{
 			path: '/login',
 			name: 'login',
 			component: () => import('@/views/Login.vue'),
 		},
-		{
-			path: '/home',
-			name: 'home',
-			component: () => import('@/views/Home.vue'),
-			children: children
-		}
 	]
 });
 
@@ -42,8 +41,8 @@ router.beforeEach((to, from, next) => {
 		NProgress.done()
 	}
 });
- /**
-	 * 路由过场动画--end
+/**
+ * 路由过场动画--end
  */
 router.afterEach(() => {
 	NProgress.done() // 结束Progress
