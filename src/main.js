@@ -15,6 +15,7 @@ import './styles/app.scss'
 
 import './plugins/element.js'
 import './plugins/axios'
+import i18n from './plugins/i18n/i18n';
 
 //Polyfill
 Polyfill.walk();
@@ -37,5 +38,6 @@ Object.keys(components).forEach((key) => {
 new Vue({
 	router,
 	store,
+	i18n,
 	render: h => h(App)
 }).$mount('#app');
