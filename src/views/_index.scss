@@ -1,11 +1,16 @@
+@import "../styles/theme";
 @import "layout/header/header";
 @import "layout/footer/footer";
+@import "dashboard/dashboard";
 
 .el-header {
+  box-shadow:0px 1px 2px 0px rgba(0,0,0,0.13);
   background-color: #fff;
 }
-.el-main {
-  padding: 0 105px;
+#app > .el-container > .el-main {
+  width: 1240px;
+  margin: 0 auto;
+  padding: 20px 10px;
 }
 .el-footer {
   position: fixed;
