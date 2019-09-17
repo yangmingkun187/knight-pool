@@ -1,0 +1,51 @@
+.user-info {
+    .el-tabs__item {
+        width: 147px;
+        height: 52px;
+        line-height: 52px;
+        &.is-active {
+            background-color: #F5F7FA;
+        }
+    }
+
+    .el-tabs--left .el-tabs__item.is-left {
+       text-align: center;
+    }
+
+    .el-tabs--left .el-tabs__header.is-left {
+       height: 550px;
+    }
+
+    .el-tabs--left .el-tabs__active-bar.is-left,
+    .el-tabs--left .el-tabs__active-bar.is-right,
+    .el-tabs--right .el-tabs__active-bar.is-left,
+    .el-tabs--right .el-tabs__active-bar.is-right {
+       width: 3px;
+    }
+
+    .el-tab-pane {
+        padding: 24px 53px;
+        .title {
+           font-weight: bold;
+        }
+        .el-form {
+            width: 40%;
+            margin: 40px auto 0 auto;
+            .el-form-item__label {
+                font-weight: bold;
+                padding: 0;
+            }
+            .el-date-editor.el-input,
+            .el-date-editor.el-input__inner {
+               width: 100%;
+            }
+            .btn-wrap {
+                text-align: center;
+                margin-top: 50px;
+                .el-button--primary {
+                   width: 135px;
+                }
+            }
+        }
+    }
+}
