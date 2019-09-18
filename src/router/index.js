@@ -11,7 +11,7 @@ const router = new Router({
 	routes: [
 		{
 			path: '/',
-			redirect: '/Dashboard',
+			redirect: '/dashboard',
 			component: () => import('@/views/Home.vue'),
 			children
 		},

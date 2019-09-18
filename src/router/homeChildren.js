@@ -1,8 +1,8 @@
 const children = [
 	{
-		path: '/Dashboard',
+		path: '/dashboard',
 		name: 'dashboard',
-		component: () => import('@/views/Dashboard/Dashboard.vue'),
+		component: () => import('@/views/dashboard/Dashboard.vue'),
 	},
 
 	{
