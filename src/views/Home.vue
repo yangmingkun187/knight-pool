@@ -2,31 +2,31 @@
     <el-container>
         <!-- 页头 -->
         <el-header height="100px">
-           <Header />
+            <AppHeader/>
         </el-header>
 
         <el-main>
-            <router-view />
+            <router-view/>
         </el-main>
 
         <!-- 页脚 -->
         <el-footer height="386px">
-            <Footer />
+            <AppFooter/>
         </el-footer>
     </el-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import Header from '@/views/layout/header/header'
-import Footer from '@/views/layout/footer/footer'
+	// @ is an alias to /src
+	import AppHeader from '@/views/layout/header/AppHeader'
+	import AppFooter from '@/views/layout/footer/AppFooter'
 
-export default {
-    name: 'home',
-    components: {
-        Header,
-        Footer
-    }
-}
+	export default {
+		name: 'home',
+		components: {
+			AppHeader,
+			AppFooter
+		}
+	}
 </script>
 
