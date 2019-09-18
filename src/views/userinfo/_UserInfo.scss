@@ -24,13 +24,15 @@
     }
 
     .el-tab-pane {
+      height: 500px;
         padding: 24px 53px;
         .title {
            font-weight: bold;
+            margin-bottom: 40px;
         }
         .el-form {
             width: 40%;
-            margin: 40px auto 0 auto;
+            margin: 0 auto;
             .el-form-item__label {
                 font-weight: bold;
                 padding: 0;
@@ -46,6 +48,12 @@
                    width: 135px;
                 }
             }
+        }
+
+        .el-pagination {
+            position: absolute;
+            bottom: 22px;
+            right: 54px;
         }
     }
 }

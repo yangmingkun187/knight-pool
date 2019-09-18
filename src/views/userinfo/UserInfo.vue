@@ -53,10 +53,65 @@
             <el-tab-pane label="登录日志" name="third">
                 <p class="title">登录日志</p>
 
+                <el-table stripe height="380">
+                    <el-table-column
+                        prop="date"
+                        label="登陆时间">
+                    </el-table-column>
+                    <el-table-column
+                        prop="name"
+                        label="登陆IP">
+                    </el-table-column>
+                </el-table>
+
+                <el-pagination
+                    background
+                    :page-sizes="[10, 20, 30, 40]"
+                    :page-size="100"
+                    layout="prev, pager, next, sizes, jumper"
+                    :total="400">
+                </el-pagination>
+
             </el-tab-pane>
 
             <el-tab-pane label="通知消息" name="fourth">
-                <p class="title">通知消息</p>
+                <p class="title">
+                    通知消息
+                    <el-button
+                        type="primary"
+                        size="small"
+                        style="float: right">
+                        全部标为已读
+                    </el-button>
+                </p>
+
+                <el-table stripe height="380">
+                    <el-table-column
+                        prop="date"
+                        label="标题">
+                    </el-table-column>
+                    <el-table-column
+                        prop="name"
+                        label="时间">
+                    </el-table-column>
+                    <el-table-column
+                        prop="name"
+                        label="状态">
+                    </el-table-column>
+                    <el-table-column type="expand">
+                        <template slot-scope="props">
+                            <p>{{ props.row.name }}</p>
+                        </template>
+                    </el-table-column>
+                </el-table>
+
+                <el-pagination
+                    background
+                    :page-sizes="[10, 20, 30, 40]"
+                    :page-size="100"
+                    layout="prev, pager, next, sizes, jumper"
+                    :total="400">
+                </el-pagination>
 
             </el-tab-pane>
         </el-tabs>
