@@ -1,9 +1,9 @@
 @import "../styles/theme";
-@import "layout/header/header";
-@import "layout/footer/footer";
+@import "layout/AppHeader/header";
+@import "layout/AppFooter/footer";
 
 // 页面样式
-@import "dashboard/dashboard";
+@import "Dashboard/dashboard";
 @import "userinfo/UserInfo";
 @import "account/account";
 

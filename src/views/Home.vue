@@ -18,8 +18,8 @@
 
 <script>
 // @ is an alias to /src
-import Header from '@/views/layout/header/header'
-import Footer from '@/views/layout/footer/footer'
+import Header from '@/views/layout/AppHeader/AppHeader'
+import Footer from '@/views/layout/AppFooter/AppFooter'
 
 export default {
     name: 'home',
