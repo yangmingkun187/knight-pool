@@ -1,0 +1,66 @@
+
+.account-list {
+  overflow: hidden;
+  background: #F9F8F8;
+  .el-card {
+    border-radius: 0;
+    position: relative;
+    :before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background-color: #1989FA;
+    }
+
+    .el-card__body {
+      padding-left: 26px;
+
+      .card-name {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .card-value {
+        font-size: 34px;
+        span {
+          font-size: 14px;
+          color: #9B9B9B;
+        }
+      }
+    }
+
+  }
+
+  .list-warp {
+    margin-top: 20px;
+    padding: 30px;
+    background-color: #ffffff;
+
+    .list-wrap-top {
+      line-height: 40px;
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .el-button {
+        width: 100%;
+      }
+    }
+
+    .table-warp {
+      margin: 40px 0;
+      .totle {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #9B9B9B;
+      }
+    }
+  }
+
+  .page-warp {
+    text-align: right;
+  }
+}
