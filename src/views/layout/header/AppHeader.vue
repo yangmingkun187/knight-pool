@@ -14,9 +14,9 @@
                          text-color="#439AFF"
                          active-text-color="#1989FA"
                          @select="handleSelect">
-                    <el-menu-item index="1">{{$t('app-header.vue.nav1')}}</el-menu-item>
-                    <el-menu-item index="2">{{$t('app-header.vue.nav2')}}</el-menu-item>
-                    <el-menu-item index="3">{{$t('app-header.vue.nav3')}}</el-menu-item>
+                    <el-menu-item index="1">{{$t('header.nav1')}}</el-menu-item>
+                    <el-menu-item index="2">{{$t('header.nav2')}}</el-menu-item>
+                    <el-menu-item index="3">{{$t('header.nav3')}}</el-menu-item>
                 </el-menu>
             </el-col>
 
@@ -74,7 +74,7 @@
 					label: 'btc'
 				}],
 				value: 'BTC',
-							searchKey: 'BTC',
+				searchKey: 'BTC',
 			}
 		},
 		methods: {
