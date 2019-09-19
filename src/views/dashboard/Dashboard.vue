@@ -119,6 +119,75 @@
 
         </el-row>
 
+        <el-row :gutter="16" class="info-group">
+
+            <el-col :span="7">
+                <el-card class="box-card notice" :body-style="{padding: 0}">
+                    <div slot="header" class="clearfix">
+                        <span>通知公告</span>
+                        <span class="all-notice">全部公告</span>
+                    </div>
+                    <ul>
+                        <li v-for="o in 6" :key="o" class="text item">
+                            {{'系统升级通知 ' + o }}
+                        </li>
+                    </ul>
+                </el-card>
+            </el-col>
+
+            <el-col :span="10">
+                <el-card class="box-card address">
+                    <div slot="header" class="clearfix">
+                        <span>挖矿地址</span>
+                    </div>
+                    <ul>
+                        <li v-for="o in 3" :key="o" class="text item">
+                            <span>{{'stratum+tcp://ltc.ss.poolin.com:25 ' + o }}</span>
+                            <el-button type="primary" plain size="mini">复制</el-button>
+                        </li>
+                    </ul>
+                </el-card>
+            </el-col>
+
+            <el-col :span="7">
+                <el-card class="box-card contact">
+                    <div slot="header" class="clearfix">
+                        <span>联系 Knight Pool</span>
+                    </div>
+                    <div class="first">
+                        <div>
+                            <div class="wechat">
+                                <img src="" alt="">微信
+                            </div>
+                            wyueyw
+                        </div>
+                        <div>
+                            <div class="email">
+                                <img src="" alt="">Email
+                            </div>
+                            admin@knightpool.co
+                        </div>
+                    </div>
+                    <div class="second" style="margin-top: 22px;">
+                        <div>
+                            <div class="qq">
+                                <img src="" alt="">QQ
+                            </div>
+                            123290398
+                        </div>
+                        <div>
+                            <div class="qqqun">
+                                <img src="" alt="">QQ群
+                            </div>
+                            3723823
+                        </div>
+                    </div>
+                </el-card>
+            </el-col>
+
+        </el-row>
+
+
     </div>
 </template>
 
