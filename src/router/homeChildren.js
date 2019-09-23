@@ -6,6 +6,12 @@ const children = [
 	},
 
 	{
+		path: '/machines',
+		name: 'machines',
+		component: () => import('@/views/machines/Machines.vue'),
+	},
+
+	{
 		path: '/userInfo',
 		name: 'userInfo',
 		component: () => import('@/views/userinfo/UserInfo.vue')

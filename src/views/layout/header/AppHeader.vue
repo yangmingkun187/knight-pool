@@ -14,8 +14,8 @@
                          text-color="#439AFF"
                          active-text-color="#1989FA"
                          @select="handleSelect">
-                    <el-menu-item index="1">{{$t('header.nav1')}}</el-menu-item>
-                    <el-menu-item index="2">{{$t('header.nav2')}}</el-menu-item>
+                    <el-menu-item index="dashboard">{{$t('header.nav1')}}</el-menu-item>
+                    <el-menu-item index="machines">{{$t('header.nav2')}}</el-menu-item>
                     <el-menu-item index="3">{{$t('header.nav3')}}</el-menu-item>
                 </el-menu>
             </el-col>
@@ -68,7 +68,7 @@
 		props: {},
 		data() {
 			return {
-				activeIndex: 1,
+				activeIndex: 'dashboard',
 				options: [{
 					value: 'BTC',
 					label: 'btc'
@@ -78,7 +78,10 @@
 			}
 		},
 		methods: {
-			handleSelect() {
+			handleSelect(key) {
+				this.$router.push({
+                  name: key
+                })
 			},
 		}
 	};

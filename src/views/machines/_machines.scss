@@ -1,0 +1,30 @@
+.machines-wrapper {
+    > .el-header {
+        display: flex;
+        align-items: center;
+        height: 88px;
+        h4 {
+            flex: 1;
+            width: 0;
+        }
+        .search-input {
+            width: 160px;
+             margin-right: 10px;
+        }
+        > .el-button-group {
+            margin-left: 10px;
+        }
+    }
+    // Vars
+
+    // Support
+
+    // Module
+    & {
+        //
+    }
+
+    // Facets
+
+    // States
+}
