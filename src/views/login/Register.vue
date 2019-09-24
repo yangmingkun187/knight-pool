@@ -28,7 +28,7 @@
                 </el-input>
             </el-form-item>
             <el-form-item style="margin-top: 40px">
-                <el-button type="primary" @click="registerNew">注册</el-button>
+                <el-button type="primary" :loading="submitLoading" @click="registerNew">注册</el-button>
             </el-form-item>
             <el-form-item style="text-align: center">
                 <router-link class="to-login" to="/login">使用已有账户登录</router-link>
@@ -71,17 +71,18 @@
 					password2: [
 						{ required: true, message: '请输入密码', trigger: 'blur' },
 						{ validator: (rule, value, callback) => {
-								if (this.registerInfo.password2 !== this.registerInfo.password) {
-									callback(new Error('两次密码不一致'))
-								} else {
-									callback()
-								}
+                                if (this.registerInfo.password2 !== this.registerInfo.password) {
+                                    callback(new Error('两次密码不一致'))
+                                } else {
+                                    callback()
+                                }
 							}, trigger: 'blur' }
                     ],
 					code: [
 						{ required: true, message: '请输入验证码', trigger: 'blur' },
 					]
-                }
+                },
+				submitLoading: false
             }
         },
 		methods: {
@@ -90,7 +91,9 @@
 					mobile: this.registerInfo.mobile,
 					code_type: 1
 				}).then(res => {
-					if (res.code === 1) {
+					if (res.code === 0) {
+						this.$message.success(res.message)
+					} else {
 						this.$message.error(res.message)
 					}
 				})
@@ -98,8 +101,15 @@
 			registerNew() {
 				this.$refs['registerInfo'].validate(valid => {
 					if (valid) {
+						this.submitLoading = true
 						loginApi.register(this.registerInfo).then(res => {
-							console.log(res)
+							this.submitLoading = false
+							if (res.code === 0) {
+								this.$message.success(res.message)
+								this.$router.push('/login')
+							} else {
+								this.$message.error(res.message)
+							}
 						})
 					}
 				})

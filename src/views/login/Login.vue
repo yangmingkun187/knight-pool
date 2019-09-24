@@ -21,7 +21,7 @@
                         <router-link class="forget-password" to="/reset">忘记密码？</router-link>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="userLogin">登录</el-button>
+                        <el-button type="primary" :loading="submitLoading1" @click="userLogin">登录</el-button>
                     </el-form-item>
                 </el-form>
             </el-tab-pane>
@@ -46,7 +46,7 @@
                         <router-link class="forget-password" to="/reset">忘记密码？</router-link>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="mobileLogin">登录</el-button>
+                        <el-button type="primary" :loading="submitLoading2" @click="mobileLogin">登录</el-button>
                     </el-form-item>
                 </el-form>
             </el-tab-pane>
@@ -86,7 +86,9 @@
 					code: [
 						{ required: true, message: '请输入验证码', trigger: 'blur' },
 					]
-                }
+                },
+				submitLoading1: false,
+				submitLoading2: false,
             }
         },
 		methods: {
@@ -95,7 +97,9 @@
 					mobile: this.mobileInfo.mobile,
 					code_type: 5
 				}).then(res => {
-					if (res.code === 1) {
+					if (res.code === 0) {
+						this.$message.success(res.message)
+					} else {
 						this.$message.error(res.message)
 					}
 				})
@@ -103,8 +107,11 @@
 			userLogin() {
 				this.$refs['userInfo'].validate(valid => {
 					if (valid) {
+						this.submitLoading1 = true
 						loginApi.userLogin(this.userInfo).then(res => {
+							this.submitLoading1 = false
                             if (res.code === 0) {
+                                this.$message.success(res.message)
                                 setToken(res.token)
                                 this.$router.push('/')
                             } else {
@@ -117,8 +124,11 @@
 			mobileLogin() {
 				this.$refs['mobileInfo'].validate(valid => {
 					if (valid) {
+						this.submitLoading2 = true
 						loginApi.mobileLogin(this.mobileInfo).then(res => {
+							this.submitLoading2 = false
 							if (res.code === 0) {
+								this.$message.success(res.message)
 								setToken(res.token)
 								this.$router.push('/')
 							} else {
