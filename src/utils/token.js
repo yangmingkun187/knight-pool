@@ -5,5 +5,5 @@ export function getToken () {
 }
 
 export function setToken (token) {
-  return cookies.set('token', token, { expires: 1 })
+  return cookies.set('token', token, { expires: 7 })
 }

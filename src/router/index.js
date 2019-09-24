@@ -17,8 +17,8 @@ const router = new Router({
 		},
 
 		{
-			path: '/login',
-			name: 'login',
+			path: '/loginhome',
+			name: 'loginhome',
 			component: () => import('@/views/Login.vue'),
 			children: [
 				{
