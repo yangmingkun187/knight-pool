@@ -1,43 +1,16 @@
-import request from '@/utils/$http'
+import request from '@/utils/axios'
+
 export default {
-  Jwtoken (param) { // 获取token
-    return request({
-      url: 'Identity/Jwtoken',
-      method: 'post',
-      data: param
-    })
-  },
-  info () { // 登录
-    return request({
-      url: '/Identity/Profile',
-      method: 'get'
-    })
-  },
-  logout () {
-    return request.post('/Identity/Logout')
-  },
-  // 获取菜单
-  GetMenusByRole (params) {
-    return request({
-      url: '/Admin/Menu/GetMenusByRoleAsync',
-      method: 'get',
-      params: params
-    })
-  },
-  // 修改密码
-  ChangePassword (param) {
-    return request.post('/Identity/ChangePassword', param)
-  },
-  // 获取授权
-  GetAuthInfo (params) {
-    return request({
-      url: '/Security/GetAuthInfo',
-      method: 'get',
-      params: params
-    })
-  },
-  // 获取验证码
-  GetVerifyCode () {
-    return request.get('/Common/VerifyCode')
-  }
+	sendMsg (params) { // 发送验证码
+		return request.post('/user/sms/', params)
+	},
+	register (params) { // 注册
+		return request.post('/user/register', params)
+    },
+	userLogin (params) { // 用户名登录
+		return request.post('/user/login', params)
+	},
+	mobileLogin (params) { // 手机登录
+		return request.post('/user/mobile/login', params)
+	},
 }

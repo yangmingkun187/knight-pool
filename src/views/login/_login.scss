@@ -11,14 +11,6 @@
 }
 
 .login {
-  width: 1200px;
-  margin: 50px auto 70px auto;
-  text-align: center;
-
-  .logo {
-    height: 24px;
-  }
-
   .el-tabs {
     margin-top: 64px;
 
@@ -29,57 +21,23 @@
         font-size: 16px;
       }
     }
-
-    .el-form {
-      width: 360px;
-      margin: 0 auto;
-      .el-form-item {
-        text-align: left;
-
-        .el-form-item__label {
-          font-size: 16px;
-          padding: 0;
-          color: #000000;
-          font-weight: 500;
-        }
-
-        .forget-password {
-          float: right;
-          text-decoration-line: none;
-          color: #1989FA;
-        }
-
-        .el-button {
-          width: 100%;
-        }
-
-        .el-input__suffix {
-          color: #303133;
-          font-size: 12px;
-          cursor: pointer;
-          right: 0;
-          &:before {
-            content: "";
-            position: absolute;
-            left: 0px;
-            top: 10px;
-            width: 2px;
-            height: 20px;
-            background-color: #DCDFE6;
-          }
-
-          .el-input__suffix-inner {
-            display: inline-block;
-            padding: 0 20px;
-          }
-    }
   }
-}
-}
 
+  .forget-password {
+    float: right;
+    text-decoration-line: none;
+    color: #1989FA;
+  }
 }
 
 .register {
+  .to-login {
+    text-decoration-line: none;
+    color: #1989FA;
+  }
+}
+
+.login, .register {
   width: 1200px;
   margin: 50px auto 70px auto;
   text-align: center;
@@ -88,9 +46,18 @@
     height: 24px;
   }
 
+  .title {
+    width: 360px;
+    margin: 45px auto auto auto;
+    text-align: left;
+    font-size: 18px;
+    color: #000000;
+    font-weight: 500;
+  }
+
   .el-form {
     width: 360px;
-    margin: 64px auto auto auto;
+    margin: 20px auto auto auto;
     .el-form-item {
       text-align: left;
 
@@ -99,11 +66,6 @@
         padding: 0;
         color: #000000;
         font-weight: 500;
-      }
-
-      .to-login {
-        text-decoration-line: none;
-        color: #1989FA;
       }
 
       .el-button {

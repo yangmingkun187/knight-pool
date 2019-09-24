@@ -2,6 +2,8 @@
     <div class="register">
         <img class="logo" src="@/assets/logo.png" alt="logo">
 
+        <p class="title">重置密码</p>
+
         <el-form
             label-position="top"
             label-width="80px"

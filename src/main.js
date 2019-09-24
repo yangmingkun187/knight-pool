@@ -14,7 +14,6 @@ import 'nprogress/nprogress.css'// Progress 进度条 样式
 import './styles/app.scss'
 
 import './plugins/element.js'
-import './plugins/axios'
 import i18n from './plugins/i18n/i18n';
 
 //Polyfill
