@@ -3,6 +3,7 @@
 @import "layout/footer/footer";
 
 // 页面样式
+@import "login/login";
 @import "dashboard/dashboard";
 @import "userinfo/UserInfo";
 @import "account/account";
@@ -18,6 +19,10 @@
   margin: 20px auto 70px auto;
   background-color: #fff;
   padding: 0;
+  &.login-main {
+    width: 100%;
+    margin: 4px auto auto auto;
+  }
 }
 
 .el-footer {

@@ -1,0 +1,135 @@
+.login-header {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  a {
+    text-decoration-line: none;
+    color: #1989FA;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.login {
+  width: 1200px;
+  margin: 50px auto 70px auto;
+  text-align: center;
+
+  .logo {
+    height: 24px;
+  }
+
+  .el-tabs {
+    margin-top: 64px;
+
+    .el-tabs__header {
+      width: 168px;
+      margin: 30px auto;
+      .el-tabs__item {
+        font-size: 16px;
+      }
+    }
+
+    .el-form {
+      width: 360px;
+      margin: 0 auto;
+      .el-form-item {
+        text-align: left;
+
+        .el-form-item__label {
+          font-size: 16px;
+          padding: 0;
+          color: #000000;
+          font-weight: 500;
+        }
+
+        .forget-password {
+          float: right;
+          text-decoration-line: none;
+          color: #1989FA;
+        }
+
+        .el-button {
+          width: 100%;
+        }
+
+        .el-input__suffix {
+          color: #303133;
+          font-size: 12px;
+          cursor: pointer;
+          right: 0;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 10px;
+            width: 2px;
+            height: 20px;
+            background-color: #DCDFE6;
+          }
+
+          .el-input__suffix-inner {
+            display: inline-block;
+            padding: 0 20px;
+          }
+    }
+  }
+}
+}
+
+}
+
+.register {
+  width: 1200px;
+  margin: 50px auto 70px auto;
+  text-align: center;
+
+  .logo {
+    height: 24px;
+  }
+
+  .el-form {
+    width: 360px;
+    margin: 64px auto auto auto;
+    .el-form-item {
+      text-align: left;
+
+      .el-form-item__label {
+        font-size: 16px;
+        padding: 0;
+        color: #000000;
+        font-weight: 500;
+      }
+
+      .to-login {
+        text-decoration-line: none;
+        color: #1989FA;
+      }
+
+      .el-button {
+        width: 100%;
+      }
+
+      .el-input__suffix {
+        color: #303133;
+        font-size: 12px;
+        cursor: pointer;
+        right: 0;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0px;
+          top: 10px;
+          width: 2px;
+          height: 20px;
+          background-color: #DCDFE6;
+        }
+
+        .el-input__suffix-inner {
+          display: inline-block;
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+}
