@@ -21,6 +21,18 @@ const children = [
 		path: '/accountList',
 		name: 'accountList',
 		component: () => import('@/views/account/AccountList.vue')
+	},
+
+	{
+		path: '/hiddenAccountList',
+		name: 'hiddenAccountList',
+		component: () => import('@/views/account/HiddenAccount.vue')
+	},
+
+	{
+		path: '/observerList',
+		name: 'observerList',
+		component: () => import('@/views/account/ObserverList.vue')
 	}
 ]
 

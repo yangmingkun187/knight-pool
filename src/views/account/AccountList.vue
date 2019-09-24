@@ -3,7 +3,24 @@
         <div>
             <el-row :gutter="24">
                 <el-col :span="6">
-                    <el-card>
+                    <el-card class="list-card">
+                        <p class="card-name">
+                            实时算力
+                            <el-tooltip
+                                effect="dark"
+                                content="Top Center 提示文字"
+                                placement="top">
+                                <i class="el-icon-info"></i>
+                            </el-tooltip>
+                        </p>
+                        <p class="card-value">
+                            34.1
+                            <span>Th/s</span>
+                        </p>
+                    </el-card>
+                </el-col>
+                <el-col :span="6">
+                    <el-card class="list-card">
                         <p class="card-name">实时算力</p>
                         <p class="card-value">
                             34.1
@@ -12,7 +29,7 @@
                     </el-card>
                 </el-col>
                 <el-col :span="6">
-                    <el-card>
+                    <el-card class="list-card">
                         <p class="card-name">实时算力</p>
                         <p class="card-value">
                             34.1
@@ -21,16 +38,7 @@
                     </el-card>
                 </el-col>
                 <el-col :span="6">
-                    <el-card>
-                        <p class="card-name">实时算力</p>
-                        <p class="card-value">
-                            34.1
-                            <span>Th/s</span>
-                        </p>
-                    </el-card>
-                </el-col>
-                <el-col :span="6">
-                    <el-card>
+                    <el-card class="list-card">
                         <p class="card-name">实时算力</p>
                         <p class="card-value">
                             34.1
@@ -90,10 +98,10 @@
                         label="操作">
                     </el-table-column>
                 </el-table>
-                <p class="totle">共400条记录 第1/80页</p>
+                <p class="tips">共400条记录 第1/80页</p>
             </div>
 
-            <div class="page-warp">
+            <div style="text-align: right">
                 <el-pagination
                     background
                     :page-sizes="[10, 20, 30, 40]"

@@ -5,7 +5,7 @@
   .el-card {
     border-radius: 0;
     position: relative;
-    :before {
+    &.list-card:before {
       content: "";
       position: absolute;
       left: 0;
@@ -20,7 +20,11 @@
 
       .card-name {
         font-size: 18px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        .el-icon-info {
+          float: right;
+          color: #9B9B9B;
+        }
       }
 
       .card-value {
@@ -52,7 +56,7 @@
 
     .table-warp {
       margin: 40px 0;
-      .totle {
+      .tips {
         margin-top: 20px;
         font-size: 14px;
         color: #9B9B9B;
@@ -60,7 +64,39 @@
     }
   }
 
-  .page-warp {
-    text-align: right;
+}
+
+.second-level-list {
+  overflow: hidden;
+  padding: 30px;
+
+  .el-breadcrumb__inner.is-link,
+  .el-breadcrumb__item:last-child .el-breadcrumb__inner {
+    font-weight: normal;
+    color: #9B9B9B;
   }
+
+  .list-warp {
+    margin-top: 40px;
+    .list-wrap-top {
+      line-height: 40px;
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .el-button {
+        width: 100%;
+      }
+    }
+
+    .table-warp {
+      margin: 40px 0;
+      .tips {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #9B9B9B;
+      }
+    }
+  }
+
 }
