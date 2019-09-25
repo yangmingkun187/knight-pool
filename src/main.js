@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
+import store from './store/index';
 
 Vue.config.productionTip = false;
 
 import router from './router'
-import store from './store'
 import * as filters from './filters' // 全局vue filter
 import * as directives from './directive' // 全局vue directives
 import components from './components/'

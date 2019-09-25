@@ -2,6 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import NProgress from 'nprogress' // Progress 进度条
 import children from './homeChildren'
+import { getToken } from '@/utils/token'
+
+const whiteList = [
+	'/login',
+	'/register',
+	'/reset',
+];
 
 Vue.use(Router);
 
@@ -17,8 +24,9 @@ const router = new Router({
 		},
 
 		{
-			path: '/loginhome',
-			name: 'loginhome',
+			path: '/auth',
+			name: 'auth',
+			redirect: '/login',
 			component: () => import('@/views/Login.vue'),
 			children: [
 				{
@@ -52,6 +60,18 @@ router.beforeEach((to, from, next) => {
 	NProgress.start(); // 开启Progress
 	while (Vue.cancel.length > 0) {
 		Vue.cancel.pop()('cancel')
+	}
+
+	if(whiteList.indexOf(to.path) > -1) {
+		NProgress.done()
+		next()
+		return;
+	}
+	let token = getToken();
+	if(!token) {
+		next({
+			path: '/login'
+		});
 	}
 	try {
 		NProgress.done()

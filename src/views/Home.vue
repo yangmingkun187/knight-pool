@@ -20,12 +20,23 @@
 	// @ is an alias to /src
 	import AppHeader from '@/views/layout/header/AppHeader'
 	import AppFooter from '@/views/layout/footer/AppFooter'
+	import {mapActions} from 'vuex';
 
 	export default {
 		name: 'home',
 		components: {
 			AppHeader,
 			AppFooter
+		},
+		async created() {
+			await this.fetchCoinTypes()
+			await this.fetchAccountList({})
+		},
+		methods: {
+			...mapActions([
+				"fetchCoinTypes",
+				"fetchAccountList",
+			]),
 		}
 	}
 </script>

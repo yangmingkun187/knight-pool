@@ -4,13 +4,17 @@
         <el-row :gutter="16" class="computing-power">
             <el-col :span="16">
 
-                <el-card class="box-card">
+                <el-card class="box-card line-chart">
                     <div slot="header" class="clearfix">
                         <span>算力统计</span>
                     </div>
-                    <div v-for="o in 4" :key="o" class="text item">
-                        {{'列表内容 ' + o }}
-                    </div>
+                    <LineChart id='dayLineChart'
+                               :date="lineDate"
+                               :data="lineData"
+                               :grid="grid"
+                               :dataZoomConf="null"
+                               height='288px'
+                               width='100%'></LineChart>
                 </el-card>
 
             </el-col>
@@ -27,14 +31,14 @@
                         <div>
                             <h5>实时算力</h5>
                             <p>
-                                999.99 <span>EH/s</span>
+                                {{account_hash_rate.shares_15m}} <span>{{account_hash_rate.shares_15m_unit}}</span>
                             </p>
                         </div>
 
                         <div>
                             <h5>1小时算力</h5>
                             <p>
-                                999.99 <span>EH/s</span>
+                                {{account_hash_rate.shares_1h}} <span>{{account_hash_rate.shares_1h_unit}}</span>
                             </p>
                         </div>
                     </div>
@@ -47,14 +51,26 @@
                         <div>
                             <h5>当前矿机</h5>
                             <p>
-                                1100
+                                {{account_miner_stats.miner_total}}
                             </p>
+                        </div>
+
+                        <div class="miner-status">
+                            <div class="active">
+                                <img src="~assets/miner_active.png" alt="">
+                                <p>{{account_miner_stats.miner_active}}</p>
+                            </div>
+                            <div>
+                                <img src="~assets/miner_inactive.png" alt="">
+                                <p>{{account_miner_stats.miner_inactive}}</p>
+                            </div>
                         </div>
                     </div>
 
                     <el-progress :text-inside="true"
                                  :stroke-width="24"
-                                 :percentage="98" status="success">
+                                 :percentage="percentageMachine"
+                                 status="success">
                     </el-progress>
 
                 </el-card>
@@ -71,7 +87,7 @@
                         <i class="el-icon-warning-outline"></i>
                     </h3>
                     <p class="blue">
-                        0.00054120 <span>BTC</span>
+                        {{earns.today}} <span>BTC</span>
                     </p>
                 </el-card>
 
@@ -85,7 +101,7 @@
                         <i class="el-icon-warning-outline"></i>
                     </h3>
                     <p>
-                        1.24566 <span>BTC</span>
+                        {{earns.total_amount}} <span>BTC</span>
                     </p>
                 </el-card>
 
@@ -98,7 +114,7 @@
                         <i class="el-icon-warning-outline"></i>
                     </h3>
                     <p>
-                        1.24566 <span>BTC</span>
+                        {{earns.pay_amount}} <span>BTC</span>
                     </p>
                 </el-card>
 
@@ -111,7 +127,7 @@
                         <i class="el-icon-warning-outline"></i>
                     </h3>
                     <p>
-                        12332432.736489292921 <span>BTC</span>
+                        {{earns.balance}} <span>BTC</span>
                     </p>
                 </el-card>
 
@@ -187,12 +203,78 @@
 
         </el-row>
 
-
     </div>
 </template>
 
 <script>
+	import DashboardAPI from '@/api/dashboard'
+	import {mapGetters, mapActions} from 'vuex';
+	import LineChart from '@/components/chart/line-chart';
+
 	export default {
 		props: {},
+		components: {
+			LineChart
+		},
+		created() {
+			this.fetchData();
+			this.fetchChartData();
+		},
+		data() {
+			return {
+				account_miner_stats: {},
+				account_hash_rate: {},
+				earns: {},
+
+				lineDate: [],
+				lineData: [],
+				grid: {
+					show: true,
+					borderWidth: 0,
+					borderColor: '#dddddd',
+					containLabel: true,
+					top: '16px',
+					left: '10px',
+					bottom: '14px',
+					right: '34px',
+				},
+			}
+		},
+		computed: {
+			...mapGetters([
+				'coinTypes',
+				'currentCoinType',
+				'accountList',
+				'currentAccount',
+			]),
+
+			percentageMachine() {
+				return this.account_miner_stats.miner_active / this.account_miner_stats.miner_total * 100 || 0
+			}
+		},
+		methods: {
+			async fetchData() {
+				let res = await DashboardAPI.fetchStat({
+					puid: 13,
+					coin: this.currentCoinType
+				});
+				this.account_miner_stats = res.account_miner_stats;
+				this.account_hash_rate = res.account_hash_rate;
+				this.earns = res.earns;
+			},
+
+			async fetchChartData() {
+				let res = await DashboardAPI.fetchChart({
+					puid: 13,
+					coin: this.currentCoinType
+				})
+				this.lineDate = [];
+				this.lineData = [];
+				for (let i = 0; i < res.length; i++) {
+					this.lineDate.push(res[i].day.split(' ')[0]);
+					this.lineData.push(res[i].value);
+				}
+			}
+		}
 	};
 </script>

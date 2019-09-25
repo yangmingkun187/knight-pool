@@ -5,6 +5,9 @@
         .el-card__body {
             padding: 0 0 30px 0;
         }
+        .line-chart .el-card__body {
+            padding: 0;
+        }
         .title {
             height:44px;
             line-height: 44px;
@@ -37,7 +40,26 @@
                 }
             }
         }
+        .miner-status {
+            img {
+                width: 18px;
+                height: 18px;
+                margin-right: 12px;
+            }
+            > div {
+                display: flex;
+                align-items: center;
+                color: #CCCCCC;
+                p {
+                    font-size: 16px;
+                }
+            }
+            .active {
+                margin-bottom: 12px;
+                color: #3EBC7D;
+            }
 
+        }
         .el-progress {
             padding-left: 20px;
             width: 80%;

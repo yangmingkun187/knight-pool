@@ -21,22 +21,23 @@
             </el-col>
 
             <el-col :xs="4" :sm="6" :md="6" :lg="6" :xl="6">
-                <el-select v-model="value"
+                <el-select v-model="coinType"
                            size="small"
                            class="change-kind"
+                           @change="changeType"
                            placeholder="请选择">
                     <el-option
-                            v-for="item in options"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
+                            v-for="item in coinTypes"
+                            :key="item"
+                            :label="item"
+                            :value="item">
                     </el-option>
                 </el-select>
 
                 <el-input
                         size="small"
                         class="search-input"
-                        placeholder="请选择日期"
+                        placeholder="请输入矿机名称关键词"
                         suffix-icon="el-icon-search"
                         v-model="searchKey">
                 </el-input>
@@ -47,12 +48,13 @@
                 <el-select v-model="value"
                            size="small"
                            class="change-account"
-                           placeholder="请选择">
+                           @change="changeAccount"
+                           placeholder="请选择子账号">
                     <el-option
-                            v-for="item in options"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
+                            v-for="item in accountList"
+                            :key="item.id"
+                            :label="item.account_name"
+                            :value="item">
                     </el-option>
                 </el-select>
             </el-col>
@@ -64,25 +66,47 @@
 </template>
 
 <script>
+	import {mapGetters, mapActions} from 'vuex';
+
 	export default {
 		props: {},
+		computed: {
+			...mapGetters([
+				'coinTypes',
+				'currentCoinType',
+				'accountList',
+				'currentAccount',
+			]),
+		},
 		data() {
 			return {
 				activeIndex: 'dashboard',
-				options: [{
-					value: 'BTC',
-					label: 'btc'
-				}],
-				value: 'BTC',
-				searchKey: 'BTC',
+
+				value: '',
+				searchKey: '',
+
+				coinType: this.currentCoinType,
+				account: this.currentAccount,
 			}
 		},
 		methods: {
 			handleSelect(key) {
 				this.$router.push({
-                  name: key
-                })
+					name: key
+				})
 			},
+
+			changeType(val) {
+				this.$store.commit('SET_COIN_TYPE', val)
+			},
+
+			changeAccount(val) {
+				this.$store.commit('SET_ACCOUNT', val)
+			}
+
+		},
+		created() {
+
 		}
 	};
 </script>

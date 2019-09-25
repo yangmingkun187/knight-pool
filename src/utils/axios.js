@@ -1,7 +1,6 @@
 import axios from 'axios'
 import url from '@/config'
-import Router from '@/router'
-import { getToken } from '@/utils/token'
+import { getToken, getCsrfToken } from '@/utils/token'
 
 const instance = axios.create({
     baseURL: url.baseURL,
@@ -13,9 +12,13 @@ const instance = axios.create({
 })
 
 let token = getToken()
+let csrfToken = getCsrfToken()
 instance.interceptors.request.use(function (config) {
     if (token) {
-      config.headers['Authorization'] = token
+      config.headers['Authorization'] = `Token: ${token}`
+    }
+    if(csrfToken) {
+        config.headers['csrfToken'] = `csrfToken: ${csrfToken}`
     }
     return config
 }, function (error) {
