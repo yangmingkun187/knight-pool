@@ -45,7 +45,7 @@
 
             <el-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4" style="text-align: right">
                 <i class="el-icon-message-solid"></i>
-                <el-select v-model="value"
+                <el-select v-model="account"
                            size="small"
                            class="change-account"
                            @change="changeAccount"
@@ -77,16 +77,27 @@
 				'accountList',
 				'currentAccount',
 			]),
+			coinType: {
+				get() {
+					return this.currentCoinType
+				},
+				set() {
+
+				},
+			},
+			account: {
+				get() {
+					return this.currentAccount
+				},
+				set() {
+
+				},
+			}
 		},
 		data() {
 			return {
 				activeIndex: 'dashboard',
-
-				value: '',
-				searchKey: '',
-
-				coinType: this.currentCoinType,
-				account: this.currentAccount,
+				searchKey: ''
 			}
 		},
 		methods: {
