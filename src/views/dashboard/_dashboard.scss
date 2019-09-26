@@ -1,6 +1,7 @@
 
 
 .dashboard {
+    overflow-x: hidden;
     .computing-power {
         .el-card__body {
             padding: 0 0 30px 0;
@@ -8,6 +9,28 @@
         .line-chart .el-card__body {
             padding: 0;
         }
+        .line-chart {
+            .el-card__header {
+                padding: 0 20px;
+            }
+            .el-card__header > div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .el-tabs__header {
+                margin-bottom: 0;
+            }
+            .el-tabs__item {
+                height: 60px;
+                line-height: 60px;
+            }
+            .el-tabs__nav-wrap::after {
+                display: none;
+            }
+        }
+
         .title {
             height:44px;
             line-height: 44px;
@@ -133,6 +156,11 @@
                 > div {
                     flex: 1;
                 }
+                img {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 4px;
+                }
             }
 
             .wechat, .email, .qq, .qqqun {
@@ -141,7 +169,7 @@
                 margin-right: 8px;
                 color: $T2;
                 font-size: 14px;
-                margin-bottom: 8px;
+                margin-bottom: 2px;
             }
         }
     }

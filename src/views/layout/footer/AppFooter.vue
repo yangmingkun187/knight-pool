@@ -39,11 +39,11 @@
                 <el-row  class="code-wrap" :gutter="30" type="flex" justify="space-between">
                     <el-col :span="12">
                         <p>小程序</p>
-                        <img src="@/assets/code.png" alt="">
+                        <img src="@/assets/images/code.png" alt="">
                     </el-col>
                     <el-col :span="12">
                         <p>安卓应用</p>
-                        <img src="@/assets/code.png" alt="">
+                        <img src="@/assets/images/code.png" alt="">
                     </el-col>
                 </el-row>
             </el-col>

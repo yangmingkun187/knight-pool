@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <img class="logo" src="@/assets/logo.png" alt="logo">
+        <img class="logo" src="@/assets/images/logo.png" alt="logo">
         <el-tabs v-model="activeName">
 
             <el-tab-pane label="账号密码登录" name="first">

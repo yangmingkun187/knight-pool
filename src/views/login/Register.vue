@@ -1,6 +1,6 @@
 <template>
     <div class="register">
-        <img class="logo" src="@/assets/logo.png" alt="logo">
+        <img class="logo" src="@/assets/images/logo.png" alt="logo">
 
         <p class="title">注册</p>
 

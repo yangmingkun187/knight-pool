@@ -7,6 +7,11 @@
                 <el-card class="box-card line-chart">
                     <div slot="header" class="clearfix">
                         <span>算力统计</span>
+                        <el-tabs v-model="activeDayFilter" @tab-click="changeDayFilter">
+                            <el-tab-pane label="最近72小时" name="3"></el-tab-pane>
+                            <el-tab-pane label="过去一周" name="7"></el-tab-pane>
+                            <el-tab-pane label="过去30天" name="30"></el-tab-pane>
+                        </el-tabs>
                     </div>
                     <LineChart id='dayLineChart'
                                :date="lineDate"
@@ -57,11 +62,11 @@
 
                         <div class="miner-status">
                             <div class="active">
-                                <img src="~assets/miner_active.png" alt="">
+                                <img src="~assets/images/miner_active.png" alt="">
                                 <p>{{account_miner_stats.miner_active}}</p>
                             </div>
                             <div>
-                                <img src="~assets/miner_inactive.png" alt="">
+                                <img src="~assets/images/miner_inactive.png" alt="">
                                 <p>{{account_miner_stats.miner_inactive}}</p>
                             </div>
                         </div>
@@ -166,34 +171,34 @@
             </el-col>
 
             <el-col :span="7">
-                <el-card class="box-card contact">
+                <el-card class="box-card contact" :body-style="{padding: '16px 20px 24px'}">
                     <div slot="header" class="clearfix">
                         <span>联系 Knight Pool</span>
                     </div>
                     <div class="first">
                         <div>
                             <div class="wechat">
-                                <img src="" alt="">微信
+                                <img src="~assets/images/icon-wechat.png" alt="">微信
                             </div>
                             wyueyw
                         </div>
                         <div>
                             <div class="email">
-                                <img src="" alt="">Email
+                                <img src="~assets/images/icon-email.png" alt="">Email
                             </div>
                             admin@knightpool.co
                         </div>
                     </div>
-                    <div class="second" style="margin-top: 22px;">
+                    <div class="second" style="margin-top: 18px;">
                         <div>
                             <div class="qq">
-                                <img src="" alt="">QQ
+                                <img src="~assets/images/icon-qq.png" alt="">QQ
                             </div>
                             123290398
                         </div>
                         <div>
                             <div class="qqqun">
-                                <img src="" alt="">QQ群
+                                <img src="~assets/images/icon-qqqun.png" alt="">QQ群
                             </div>
                             3723823
                         </div>
@@ -222,6 +227,7 @@
 		},
 		data() {
 			return {
+				activeDayFilter: '3',
 				account_miner_stats: {},
 				account_hash_rate: {},
 				earns: {},
@@ -256,7 +262,7 @@
 			async fetchData() {
 				let res = await DashboardAPI.fetchStat({
 					puid: 13,
-					coin: this.currentCoinType
+					coin: this.currentCoinType,
 				});
 				this.account_miner_stats = res.account_miner_stats;
 				this.account_hash_rate = res.account_hash_rate;
@@ -266,7 +272,8 @@
 			async fetchChartData() {
 				let res = await DashboardAPI.fetchChart({
 					puid: 13,
-					coin: this.currentCoinType
+					coin: this.currentCoinType,
+					day: this.activeDayFilter
 				})
 				this.lineDate = [];
 				this.lineData = [];
@@ -274,7 +281,12 @@
 					this.lineDate.push(res[i].day.split(' ')[0]);
 					this.lineData.push(res[i].value);
 				}
-			}
+			},
+
+			changeDayFilter() {
+				this.fetchChartData()
+			},
+
 		}
 	};
 </script>
